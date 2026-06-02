@@ -116,7 +116,7 @@ const FieldIntelligence = () => {
           {[img1, img2, img3, img4, img5, img6].map((image, index) => (
             <div
               key={index}
-              className="h-[320px] overflow-hidden"
+              className="h-[495px] overflow-hidden"
             >
               <img
                 src={image}
@@ -132,7 +132,7 @@ const FieldIntelligence = () => {
           {[img1, img2, img3, img4, img5, img6].map((image, index) => (
             <div
               key={index}
-              className="h-[250px] overflow-hidden"
+              className="h-[380px] overflow-hidden"
             >
               <img
                 src={image}
@@ -146,23 +146,9 @@ const FieldIntelligence = () => {
         {/* Button */}
         <div className="flex justify-center mt-16">
           <button
-            className="
-              h-[55px]
-              px-10
-              bg-[#5E7D4D]
-              border
-              border-[#5E7D4D]
-              text-white
-              text-[16px]
-              font-bold
-              uppercase
-              cursor-pointer
-              transition-all
-              duration-300
-              hover:scale-105
-              hover:bg-transparent
-              hover:text-[#5E7D4D]
-            "
+            className=" h-[55px] px-10 bg-[#5E7D4D] border border-[#5E7D4D] text-white text-[16px] font-bold
+                        uppercase cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-transparent
+                      hover:text-[#5E7D4D]"
           >
             View Full Gallery
           </button>
