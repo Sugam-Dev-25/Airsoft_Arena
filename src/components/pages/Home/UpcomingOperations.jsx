@@ -4,6 +4,8 @@ import API from "../../../Api/Api";
 import { FaCalendarAlt, FaMapMarkerAlt, FaUsers } from "react-icons/fa";
 import { FaLocationCrosshairs } from "react-icons/fa6";
 import { HiChartBar } from "react-icons/hi2";
+import { FiSearch } from "react-icons/fi";
+import AirsoftArenaSubscriptions from "./AirsoftArenaSubscriptions";
 
 
 const tabs = [
@@ -94,9 +96,9 @@ const UpcomingOperations = () => {
           className="
             mt-14
             border
-            border-[#28311f]
-            bg-[#0D0F10]
-            rounded-xl
+            border-[#7C876180]
+            bg-[#7C87611A]
+            rounded-[5px]
             p-4
             flex
             flex-wrap
@@ -112,20 +114,20 @@ const UpcomingOperations = () => {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`
-                  px-5
-                  py-3
-                  text-sm
-                  uppercase
-                  tracking-wider
-                  transition-all
-                  border
+        px-5
+        py-3
+        text-sm
+        uppercase
+        tracking-wider
+        transition-all
+        rounded-[5px]
+        cursor-pointer
 
-                  ${
-                    activeTab === tab
-                      ? "bg-[#6f8f57] text-white border-[#6f8f57]"
-                      : "border-[#28311f] text-[#8a8a8a] hover:text-white"
+        ${activeTab === tab
+                    ? "bg-[#5E7D4D] text-white"
+                    : "bg-transparent text-[#8A8A8A] hover:text-white"
                   }
-                `}
+      `}
               >
                 {tab}
               </button>
@@ -133,24 +135,39 @@ const UpcomingOperations = () => {
           </div>
 
           {/* SEARCH */}
-          <input
-            type="text"
-            placeholder="Search operations..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="
-              bg-transparent
-              border
-              border-[#28311f]
-              px-4
-              py-3
-              outline-none
-              w-full
-              md:w-[280px]
-              text-white
-              placeholder:text-[#7f7f7f]
-            "
-          />
+          <div className="relative w-full md:w-[280px]">
+            <FiSearch size={25}
+              className="
+      absolute
+      left-4
+      top-1/2
+      -translate-y-1/2
+      text-[#5E7D4D]
+      text-[18px]
+      pointer-events-none
+    "
+            />
+
+            <input
+              type="text"
+              placeholder="Search operations..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="
+    bg-transparent
+    border-[0.5px]
+    border-white
+    rounded-[5px]
+    pl-12
+    pr-2
+    py-3
+    outline-none
+    w-full
+    text-white
+    placeholder:text-[#7f7f7f]
+  "
+            />
+          </div>
         </div>
 
         {/* OPERATION CARDS */}
@@ -162,12 +179,13 @@ const UpcomingOperations = () => {
               <div
                 key={operation.id}
                 className="
-                  border
-                  border-[#28311f]
-                  rounded-2xl
-                  overflow-hidden
-                  bg-[#050807]
-                "
+    border
+    border-[#28311f]
+    rounded-2xl
+    overflow-hidden
+    bg-[#050807]
+    p-[10px]
+  "
               >
                 <div className="grid lg:grid-cols-[1.3fr_1fr_0.7fr]">
                   {/* IMAGE */}
@@ -179,11 +197,12 @@ const UpcomingOperations = () => {
                       }
                       alt={operation.title.rendered}
                       className="
-                        w-full
-                        h-full
-                        object-cover
-                        min-h-[320px]
-                      "
+    w-full
+    h-full
+    object-cover
+    min-h-[270px]
+    rounded-[10px]
+  "
                     />
                   </div>
 
@@ -193,21 +212,25 @@ const UpcomingOperations = () => {
                       p-6
                       border-t
                       lg:border-t-0
-                      lg:border-l
                       border-[#28311f]
                     "
                   >
                     {/* SUBTITLE */}
-                    <p
-                      className="
-                        text-[#6f8f57]
-                        uppercase
-                        text-sm
-                        tracking-widest
-                      "
-                    >
-                      {acf.operation_subtitle}
-                    </p>
+                    <div className="flex items-center gap-3">
+                      <div className="w-[2px] h-[24px] bg-[#7C8761]" />
+
+                      <p
+                        className="
+    text-[#5E7D4D]
+    uppercase
+    text-[14px]
+    font-semibold
+    tracking-widest
+  "
+                      >
+                        {acf.operation_subtitle}
+                      </p>
+                    </div>
 
                     {/* TITLE */}
                     <h2
@@ -285,7 +308,7 @@ const UpcomingOperations = () => {
 
                       <div className="flex items-center gap-3 text-[#cfcfcf] uppercase font-semibold">
                         <FaLocationCrosshairs className="text-[#6f8f57]" />
-                        
+
                         <span>{acf.mission_type}</span>
                       </div>
 
@@ -297,7 +320,7 @@ const UpcomingOperations = () => {
 
                       <div className="flex items-center gap-3 text-[#cfcfcf] uppercase font-semibold">
                         <HiChartBar className="text-[#6f8f57]" />
-                        
+
                         <span>{acf.difficulty}</span>
                       </div>
                     </div>
