@@ -1,9 +1,7 @@
-import React from 'react'
+import axios from "axios";
 
-const Api = () => {
-  return (
-    <div>Api</div>
-  )
-}
+const API = axios.create({
+  baseURL: "https://subhadeep.ahaanmedia.com/wp-json/wp/v2",
+});
 
-export default Api
+export default API;
