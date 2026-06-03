@@ -1,9 +1,60 @@
-import React from 'react'
+import React from "react";
 
 const TacticalMarketplace = () => {
   return (
-    <div>TacticalMarketplace</div>
-  )
-}
+    <section className="w-full bg-[#0B0D0E] py-20 font-['Chakra_Petch']">
+      <div className="max-w-[1440px] mx-auto px-5 xl:px-[80px]">
+        {/* Heading Content */}
+        <div className="max-w-[850px] mx-auto text-center">
+          {/* Sub Heading */}
+          <span
+            className="
+              block
+              text-[14px]
+              font-semibold
+              uppercase
+              tracking-wide
+              text-[#7C8761]
+            "
+          >
+            // OPERATOR SUPPLY NETWORK //
+          </span>
 
-export default TacticalMarketplace
+          {/* Main Heading */}
+          <h2
+            className="
+              mt-4
+              text-[32px]
+              md:text-[40px]
+              xl:text-[45px]
+              font-bold
+              uppercase
+              leading-tight
+              text-[#5E7D4D]
+            "
+          >
+            Tactical Marketplace
+          </h2>
+
+          {/* Description */}
+          <p
+            className="
+              mt-4
+              max-w-[700px]
+              mx-auto
+              text-[20px]
+              font-medium
+              leading-[1.8]
+              text-white
+            "
+          >
+            Buy, sell and discover premium airsoft equipment, tactical apparel
+            and mission-ready gear from the community.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TacticalMarketplace;
