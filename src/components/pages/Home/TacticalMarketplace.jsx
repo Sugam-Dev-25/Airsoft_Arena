@@ -8,45 +8,21 @@ const TacticalMarketplace = () => {
         <div className="max-w-[850px] mx-auto text-center">
           {/* Sub Heading */}
           <span
-            className="
-              block
-              text-[14px]
-              font-semibold
-              uppercase
-              tracking-wide
-              text-[#7C8761]
-            "
+            className=" block text-[14px] font-semibold uppercase tracking-wide text-[#7C8761]"
           >
             // OPERATOR SUPPLY NETWORK //
           </span>
 
           {/* Main Heading */}
           <h2
-            className="
-              mt-4
-              text-[32px]
-              md:text-[40px]
-              xl:text-[45px]
-              font-bold
-              uppercase
-              leading-tight
-              text-[#5E7D4D]
-            "
+            className=" mt-4 text-[32px] md:text-[40px] xl:text-[45px] font-bold uppercase leading-tight text-[#5E7D4D]"
           >
             Tactical Marketplace
           </h2>
 
           {/* Description */}
           <p
-            className="
-              mt-4
-              max-w-[700px]
-              mx-auto
-              text-[20px]
-              font-medium
-              leading-[1.8]
-              text-white
-            "
+            className=" mt-4 max-w-[700px] mx-auto text-[20px] font-medium leading-[1.8] text-white"
           >
             Buy, sell and discover premium airsoft equipment, tactical apparel
             and mission-ready gear from the community.

@@ -5,3 +5,27 @@
 body {
   font-family: "Chakra Petch", sans-serif;
 }
+
+@keyframes tacticalCorner {
+  0% {
+    opacity: 0.4;
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px #7C8761);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 8px #7C8761);
+  }
+
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px #7C8761);
+  }
+}
+
+.tactical-corner {
+  animation: tacticalCorner 2s ease-in-out infinite;
+}

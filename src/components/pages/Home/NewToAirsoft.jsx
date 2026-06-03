@@ -121,8 +121,8 @@ const NewToAirsoft = () => {
                           transition-all duration-300 hover:-translate-y-2"
             >
               {/* Corner Frame */}
-              <div className="absolute -top-[10px] -left-[10px] w-8 h-8 border-l border-t border-[#7C8761]" />
-              <div className="absolute -bottom-[10px] -right-[10px] w-8 h-8 border-r border-b border-[#7C8761]" />
+              <div className=" tactical-corner absolute -top-[10px] -left-[10px] w-8 h-8 border-l border-t border-[#7C8761]" />
+              <div className=" tactical-corner absolute -bottom-[10px] -right-[10px] w-8 h-8 border-r border-b border-[#7C8761]" />
 
               {/* Tag + Icon */}
               <div className="flex items-start justify-between">

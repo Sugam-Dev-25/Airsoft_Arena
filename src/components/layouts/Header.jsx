@@ -37,10 +37,10 @@ const Header = () => {
               </div>
 
               {/* Search */}
-              <div className="ml-[130px] flex-1 max-w-[500px]">
+              <div className="ml-[130px] flex-1 max-w-[545px]">
                 <div className="h-[50px] border border-[#2A2D2F] flex items-center px-4">
                   <FiSearch
-                    size={18}
+                    size={25}
                     className="text-[#5E7D4D] shrink-0"
                   />
 

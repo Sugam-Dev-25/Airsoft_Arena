@@ -20,14 +20,14 @@ const HomeBanner = () => {
 
             {/* Top Left Frame Corner */}
             <div
-              className=" absolute top-[8px] left-[8px] w-[46px] h-[45px] border-t-[5px] border-l-[5px]
-                        border-[#7C8761]"
+              className=" tactical-corner absolute top-[8px] left-[8px] w-[46px] h-[45px] border-t-[5px]
+                          border-l-[5px] border-[#7C8761]"
             />
 
             {/* Bottom Right Frame Corner */}
             <div
-              className=" absolute bottom-[8px] right-[8px] w-[46px] h-[45px] border-b-[5px] border-r-[5px]
-                        border-[#7C8761]"
+              className=" tactical-corner absolute bottom-[8px] right-[8px] w-[46px] h-[45px] border-b-[5px]
+                          border-r-[5px] border-[#7C8761]"
             />
 
             {/* Subtitle */}
