@@ -40,16 +40,8 @@ const OperationsSidebar = () => {
 
         {/* LIVE OPERATION STATUS */}
         <div
-            className="
-    w-full
-    xl:max-w-[300px]
-    border
-    border-[#7C876180]
-    rounded-[10px]
-    bg-transparent
-    p-4
-    overflow-hidden
-  "
+            className=" w-full xl:max-w-[300px] border border-[#7C876180] rounded-[10px] bg-transparent
+                        p-4 overflow-hidden"
         >
             <div className="flex items-center gap-2 mb-4">
                 <div className="w-[2px] h-[20px] bg-[#7C8761]" />
@@ -64,69 +56,33 @@ const OperationsSidebar = () => {
 
         {/* STATISTICS */}
         <div
-            className="
-    w-full
-    xl:max-w-[320px]
-    border
-    border-[#7C876180]
-    rounded-[10px]
-    bg-transparent
-    p-5
-  "
+            className=" w-full xl:max-w-[320px] border border-[#7C876180] rounded-[10px] bg-transparent p-5"
         >
             <div
-                className="
-    grid
-    grid-cols-1
-    min-[768px]:grid-cols-2
-    min-[901px]:grid-cols-1
-    gap-4
-  "
+                className=" grid grid-cols-1 min-[768px]:grid-cols-2 min-[901px]:grid-cols-1 gap-4"
             >
 
                 {statistics.map((item) => (
                     <div
                         key={item.id}
-                        className="
-            bg-[#16191B]
-            border
-            border-[#7C876180]
-            rounded-[10px]
-            p-4
-            flex
-            items-center
-            gap-4
-          "
+                        className=" bg-[#16191B] border border-[#7C876180] rounded-[10px] p-4
+                                    flex items-center gap-4 "
                     >
                         <div
-                            className="
-              text-[#B3B4B2]
-              text-[40px]
-              shrink-0
-            "
+                            className=" text-[#B3B4B2] text-[40px] shrink-0 "
                         >
                             {item.icon}
                         </div>
 
                         <div>
                             <p
-                                className="
-                text-[14px]
-                font-semibold
-                text-[#B3B4B2]
-              "
+                                className=" text-[14px] font-semibold text-[#B3B4B2] "
                             >
                                 {item.title}
                             </p>
 
                             <h3
-                                className="
-                text-[40px]
-                leading-none
-                font-bold
-                text-[#5E7D4D]
-                mt-2
-              "
+                                className=" text-[40px] leading-none font-bold text-[#5E7D4D] mt-2 "
                             >
                                 {item.value}
                             </h3>
@@ -135,23 +91,9 @@ const OperationsSidebar = () => {
                 ))}
 
                 <button
-                    className="
-    mt-2
-    w-full
-    h-[56px]
-    bg-[#5E7D4D]
-    border
-    border-[#5E7D4D]
-    text-white
-    uppercase
-    font-semibold
-    tracking-wide
-    cursor-pointer
-    transition-all
-    duration-300
-    hover:bg-transparent
-    hover:text-[#5E7D4D]
-  "
+                    className=" mt-2 w-full h-[56px] bg-[#5E7D4D] border border-[#5E7D4D] text-white uppercase font-semibold
+                                tracking-wide cursor-pointer transition-all duration-300 hover:bg-transparent
+                              hover:text-[#5E7D4D] "
                 >
                     VIEW ALL STATISTICS
                 </button>

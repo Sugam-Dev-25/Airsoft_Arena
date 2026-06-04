@@ -68,17 +68,8 @@ const OperationsContent = () => {
     <>
       {/* TOP BAR */}
       <div
-        className="
-                  border
-                  border-[#7C876180]
-                  bg-[#7C87611A]
-                  rounded-[5px]
-                  p-4
-                  flex
-                  flex-wrap
-                  gap-[2px]
-                  items-center
-                "
+        className=" border border-[#7C876180] bg-[#7C87611A] rounded-[5px] p-4 flex flex-wrap gap-[2px]
+                    items-center"
       >
         {/* TABS */}
         <div className="flex flex-wrap gap-2">
@@ -86,15 +77,8 @@ const OperationsContent = () => {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`
-              px-5
-              py-3
-              text-sm
-              uppercase
-              tracking-wider
-              transition-all
-              rounded-[5px]
-              cursor-pointer
+              className={`px-5 py-3 text-sm uppercase tracking-wider transition-all
+                          rounded-[5px] cursor-pointer
       
               ${activeTab === tab
                   ? "bg-[#5E7D4D] text-white"
@@ -110,35 +94,16 @@ const OperationsContent = () => {
         {/* SEARCH */}
         <div className="relative w-full xl:w-[200px]">
           <FiSearch size={18}
-            className="
-            absolute
-            left-4
-            top-1/2
-            -translate-y-1/2
-            text-[#5E7D4D]
-            text-[18px]
-            pointer-events-none
-          "
+            className=" absolute left-4 top-1/2 -translate-y-1/2 text-[#5E7D4D] text-[18px]
+                        pointer-events-none"
           />
 
           <input
-            type="text"
-            placeholder="Search operations..."
+            type="text" placeholder="Search operations..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="
-          bg-transparent
-          border-[0.5px]
-          border-white
-          rounded-[5px]
-          pl-12
-          pr-2
-          py-3
-          outline-none
-          w-full
-          text-white
-          placeholder:text-[#7f7f7f]
-        "
+            className=" bg-transparent border-[0.5px] border-white rounded-[5px] pl-12 pr-2
+                        py-3 outline-none w-full text-white placeholder:text-[#7f7f7f]"
           />
         </div>
       </div>
@@ -151,14 +116,7 @@ const OperationsContent = () => {
           return (
             <div
               key={operation.id}
-              className="
-          border
-    border-[#28311f]
-    rounded-xl
-    overflow-hidden
-    bg-[#050807]
-    p-[6px]
-        "
+              className=" border border-[#28311f] rounded-xl overflow-hidden bg-[#050807] p-[6px]"
             >
               <div className="grid lg:grid-cols-[0.9fr_1.2fr_0.7fr]">
                 {/* IMAGE */}
@@ -169,36 +127,20 @@ const OperationsContent = () => {
                         ?.source_url
                     }
                     alt={operation.title.rendered}
-                    className="
-           w-full
-  h-[285px]
-  object-cover
-  rounded-[8px]
-        "
+                    className=" w-full h-[285px] object-cover rounded-[8px]"
                   />
                 </div>
 
                 {/* CONTENT */}
                 <div
-                  className="
-                            p-4
-                            border-t
-                            lg:border-t-0
-                            border-[#28311f]
-                          "
+                  className=" p-4 border-t lg:border-t-0 border-[#28311f]"
                 >
                   {/* SUBTITLE */}
                   <div className="flex items-center gap-3">
                     <div className="w-[2px] h-[24px] bg-[#7C8761]" />
 
                     <p
-                      className="
-          text-[#5E7D4D]
-          uppercase
-          text-[14px]
-          font-semibold
-          tracking-widest
-        "
+                      className="text-[#5E7D4D] uppercase text-[14px] font-semibold tracking-widest"
                     >
                       {acf.operation_subtitle}
                     </p>
@@ -206,26 +148,14 @@ const OperationsContent = () => {
 
                   {/* TITLE */}
                   <h2
-                    className="
-                              text-2xl xl:text-3xl
-                              font-black
-                              uppercase
-                              mt-3
-                              leading-tight
-                              text-white
-                            "
+                    className=" text-2xl xl:text-3xl font-black uppercase mt-3 leading-tight text-white"
                   >
                     {operation.title.rendered}
                   </h2>
 
                   {/* DESCRIPTION */}
                   <div
-                    className="
-                              text-[#cfcfcf]
-  mt-3
-  text-sm
-  leading-6
-                            "
+                    className="text-[#cfcfcf] mt-3 text-sm leading-6"
                     dangerouslySetInnerHTML={{
                       __html: operation.content.rendered,
                     }}
@@ -236,14 +166,7 @@ const OperationsContent = () => {
                     {acf.tags?.split(",").map((tag, index) => (
                       <span
                         key={index}
-                        className="
-                                    bg-[#445734]
-                                    text-[#b8d59f]
-                                    px-3
-                                    py-1
-                                    text-xs
-                                    uppercase
-                                  "
+                        className="bg-[#445734] text-[#b8d59f] px-3 py-1 text-xs uppercase"
                       >
                         {tag.trim()}
                       </span>
@@ -253,16 +176,8 @@ const OperationsContent = () => {
 
                 {/* SIDEBAR */}
                 <div
-                  className="
-                            p-4
-                            border-t
-                            lg:border-t-0
-                            lg:border-l
-                            border-[#28311f]
-                            flex
-                            flex-col
-                            justify-between
-                          "
+                  className=" p-4 border-t lg:border-t-0 lg:border-l border-[#28311f] flex flex-col
+                              justify-between"
                 >
                   {/* DETAILS */}
                   <div className="space-y-2">
@@ -300,33 +215,15 @@ const OperationsContent = () => {
                   {/* BUTTONS */}
                   <div className="space-y-2 mt-2">
                     <button
-                      className="
-                                w-full
-                                border
-                                border-white
-                                py-2.5
-                                uppercase
-                                font-semibold
-                                text-white
-                                hover:bg-white
-                                hover:text-black
-                                transition-all
-                              "
+                      className=" w-full border border-white py-2.5 uppercase font-semibold text-white
+                                hover:bg-white hover:text-black transition-all"
                     >
                       {acf.secondary_button_text}
                     </button>
 
                     <button
-                      className="
-                                w-full
-                                bg-[#6f8f57]
-                                py-2.5
-                                uppercase
-                                font-semibold
-                                text-white
-                                hover:opacity-90
-                                transition-all
-                              "
+                      className=" w-full bg-[#6f8f57] py-2.5 uppercase font-semibold text-white
+                                  hover:opacity-90 transition-all"
                     >
                       {acf.primary_button_text}
                     </button>

@@ -29,3 +29,35 @@ body {
 .tactical-corner {
   animation: tacticalCorner 2s ease-in-out infinite;
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+.tactical-swiper .swiper-button-prev,
+.tactical-swiper .swiper-button-next {
+  width: 70px;
+  height: 70px;
+  background: #7b9461;
+  color: #fff;
+}
+
+.tactical-swiper .swiper-button-prev:after,
+.tactical-swiper .swiper-button-next:after {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.tactical-swiper .swiper-button-prev {
+  left: 0;
+}
+
+.tactical-swiper .swiper-button-next {
+  right: 0;
+}

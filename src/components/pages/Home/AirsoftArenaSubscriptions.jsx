@@ -14,15 +14,7 @@ const AirsoftArenaSubscriptions = () => {
   return (
     <section className="w-full flex items-center justify-center">
       <div
-        className="
-          relative
-          w-[350px]
-          h-[302px]
-          lg:h-[200px]
-          xl:h-[230px]
-          bg-black
-          overflow-hidden
-        "
+        className=" relative w-[350px] h-[302px] lg:h-[200px] xl:h-[230px] bg-black overflow-hidden "
       >
         {/* Frame Corners */}
         <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#00ff55] z-20" />
@@ -53,26 +45,11 @@ const AirsoftArenaSubscriptions = () => {
 
         {/* Radar Sweep */}
         <div
-          className="
-    absolute
-    inset-0
-    rounded-full
-    animate-[spin_3s_linear_infinite]
-  "
+          className=" absolute inset-0 rounded-full animate-[spin_3s_linear_infinite] "
         >
           <div
-            className="
-      absolute
-      left-1/2
-      top-1/2
-      w-[50%]
-      h-[50%]
-      bg-gradient-to-r
-      from-[#5E7D4D]/70
-      via-[#5E7D4D]/30
-      to-transparent
-      origin-bottom-left
-    "
+            className=" absolute left-1/2 top-1/2 w-[50%] h-[50%] bg-gradient-to-r from-[#5E7D4D]/70
+                      via-[#5E7D4D]/30 to-transparent origin-bottom-left "
             style={{
               clipPath: "polygon(0 100%, 100% 50%, 100% 100%)",
               transform: "translateY(-100%)",
@@ -83,14 +60,7 @@ const AirsoftArenaSubscriptions = () => {
         {dots.map((dot, index) => (
           <span
             key={index}
-            className="
-              absolute
-              w-2
-              h-2
-              rounded-full
-              bg-green-400
-              animate-ping
-            "
+            className=" absolute w-2 h-2 rounded-full bg-green-400 animate-ping "
             style={{
               top: dot.top,
               left: dot.left,
