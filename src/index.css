@@ -39,6 +39,11 @@ body {
   scrollbar-width: none;
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
+}
+
 
 .tactical-swiper .swiper-button-prev,
 .tactical-swiper .swiper-button-next {
