@@ -3,7 +3,7 @@ import API from "../../../Api/Api";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -152,11 +152,13 @@ const TacticalMarketplace = () => {
                     <SwiperSlide key={product.id}>
                       <div className="group">
                         <div className="relative overflow-hidden">
-                          <img
-                            src={image}
-                            alt={product.title.rendered}
-                            className="w-full h-[420px] object-cover transition duration-500 group-hover:scale-105"
-                          />
+                          <Link to={`/product/${product.slug}`}>
+  <img
+    src={image}
+    alt={product.title.rendered}
+    className="w-full h-[420px] object-cover transition duration-500 group-hover:scale-105"
+  />
+</Link>
 
                           <div
                             className=" absolute top-4 left-0 w-[180px] bg-gradient-to-r from-[#7C8761]
