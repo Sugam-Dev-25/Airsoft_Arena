@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import API from "../../../Api/Api";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -58,17 +59,8 @@ const TacticalMarketplace = () => {
 
         {/* Tabs */}
         <div
-          className="
-    mt-16
-    border
-    border-[0.5px]
-    border-[#7C876180]
-    bg-[#7C87611A]
-    rounded-[5px]
-    p-[15px]
-    overflow-x-auto
-    scrollbar-hide
-  "
+          className=" mt-16 border border-[0.5px] border-[#7C876180] bg-[#7C87611A] rounded-[5px]
+                      p-[15px] overflow-x-auto scrollbar-hide "
         >
           <div className="flex min-w-max">
             <button
@@ -87,17 +79,8 @@ const TacticalMarketplace = () => {
                 <button
                   key={cat.id}
                   onClick={() => setActiveCat(cat.id)}
-                  className={`
-    px-6.5
-    py-3
-    uppercase
-    text-sm
-    tracking-wider
-    whitespace-nowrap
-    rounded-[5px]
-    cursor-pointer
-    transition-all
-    duration-300
+                  className={`px-6.5 py-3 uppercase text-sm tracking-wider whitespace-nowrap
+                              rounded-[5px] cursor-pointer transition-all duration-300
     ${activeCat === cat.id
                       ? "bg-[#5E7D4D] text-white"
                       : "text-[#8c8c8c] hover:text-white hover:bg-[#5E7D4D]/10"
@@ -116,104 +99,131 @@ const TacticalMarketplace = () => {
             Loading Products...
           </div>
         ) : (
-          <Swiper
-            modules={[Navigation]}
-            navigation
-            spaceBetween={30}
-            slidesPerView={3}
-            breakpoints={{
-              320: {
-                slidesPerView: 1,
-              },
-              768: {
-                slidesPerView: 2,
-              },
-              1200: {
-                slidesPerView: 3,
-              },
-            }}
-            className="mt-14 tactical-swiper"
-          >
-            {filteredProducts.map((product) => {
-              const image =
-                product._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
-                "/placeholder.jpg";
 
-              const features =
-                product.acf?.features?.split(",").map((item) => item.trim()) ||
-                [];
+          <>
+            <div className="relative">
+              <button
+                className=" marketplace-prev absolute left-0.4 top-[350px] z-10 w-[67px] h-[67px]
+                            border border-[#7C876180] bg-[#5E7D4D] flex items-center justify-center
+                          text-white cursor-pointer "
+              >
+                <FaArrowLeft />
+              </button>
 
-              return (
-                <SwiperSlide key={product.id}>
-                  <div className="group">
-                    <div className="relative overflow-hidden">
-                      <img
-                        src={image}
-                        alt={product.title.rendered}
-                        className="w-full h-[420px] object-cover transition duration-500 group-hover:scale-105"
-                      />
+              <button
+                className=" marketplace-next absolute right-0.5 top-[350px] z-10 w-[67px] h-[67px] border
+                          border-[#7C876180] bg-[#5E7D4D] flex items-center justify-center text-white
+                            cursor-pointer "
+              >
+                <FaArrowRight />
+              </button>
 
-                      <div
-                        className="
-    absolute
-    top-4
-    left-0
-    w-[180px]
-    bg-gradient-to-r
-    from-[#7C8761]
-    to-transparent
-    text-white
-    text-xs
-    uppercase
-    px-4
-    py-2
-  "
-                      >
-                        {product.acf?.brand_name}
-                      </div>
-                    </div>
+              <Swiper
+                modules={[Navigation]}
+                navigation={{
+                  prevEl: ".marketplace-prev",
+                  nextEl: ".marketplace-next",
+                }}
+                spaceBetween={30}
+                slidesPerView={3}
+                breakpoints={{
+                  320: {
+                    slidesPerView: 1,
+                  },
+                  768: {
+                    slidesPerView: 2,
+                  },
+                  1200: {
+                    slidesPerView: 3,
+                  },
+                }}
+                className="mt-14 tactical-swiper"
+              >
+                {filteredProducts.map((product) => {
+                  const image =
+                    product._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+                    "/placeholder.jpg";
 
-                    <div className="mt-5">
-                      <div className="border-l-2 border-[#5E7D4D] pl-3 text-[#5E7D4D] uppercase text-sm">
-                        {product.acf?.product_subtitle}
-                      </div>
+                  const features =
+                    product.acf?.features?.split(",").map((item) => item.trim()) ||
+                    [];
 
-                      <h3 className="mt-4 text-white text-[30px] font-bold uppercase leading-[1.5] min-h-[110px]">
-                        {product.title.rendered}
-                      </h3>
+                  return (
+                    <SwiperSlide key={product.id}>
+                      <div className="group">
+                        <div className="relative overflow-hidden">
+                          <img
+                            src={image}
+                            alt={product.title.rendered}
+                            className="w-full h-[420px] object-cover transition duration-500 group-hover:scale-105"
+                          />
 
-                      <div className="border-t border-[#1b2220] pt-3 flex items-center justify-between">
-                        <div className="text-[#5E7D4D] text-[42px] font-bold">
-                          $
-                          {product.meta?._price || product.meta?.price || "145"}
+                          <div
+                            className=" absolute top-4 left-0 w-[180px] bg-gradient-to-r from-[#7C8761]
+                                        to-transparent text-white text-xs uppercase px-4 py-2 "
+                          >
+                            {product.acf?.brand_name}
+                          </div>
                         </div>
 
-                        <button className="border border-[#5d5d5d] px-8 py-4 uppercase text-white hover:bg-[#6f8d5c] transition">
-                          Add To Cart
-                        </button>
-                      </div>
-
-                      <div className="border-t border-[#1b2220] mt-6 pt-5 flex flex-wrap gap-2">
-                        {features.map((feature, index) => (
-                          <span
-                            key={index}
-                            className="bg-[#4d613e] text-[#d5d5d5] text-[11px] uppercase px-3 py-2"
+                        <div className="mt-5">
+                          <div
+                            className=" border-l-2 border-[#7C8761] pl-3 text-[#5E7D4D] uppercase
+                                        text-[14px] font-semibold "
                           >
-                            {feature}
-                          </span>
-                        ))}
+                            {product.acf?.product_subtitle}
+                          </div>
+
+                          <h3
+                            className=" mt-4 text-[#B3B4B2] text-[30px] font-bold uppercase leading-[1.5] min-h-[110px] "
+                          >
+                            {product.title.rendered}
+                          </h3>
+
+                          <div className="border-t border-[#1b2220] pt-3 flex items-center justify-between">
+                            <div className="text-[#5E7D4D] text-[42px] font-bold">
+                              $
+                              {product.meta?._price || product.meta?.price || "145"}
+                            </div>
+
+                            <button
+                              className=" border border-[#5d5d5d] px-8 py-4 uppercase text-white cursor-pointer transition-all
+                                          duration-300 hover:bg-[#5E7D4D] hover:border-[#5E7D4D]
+                                        hover:text-white font-bold "
+                            >
+                              Add To Cart
+                            </button>
+                          </div>
+
+                          <div className="border-t border-[#1b2220] mt-6 pt-5 flex flex-wrap gap-2">
+                            {features.map((feature, index) => (
+                              <span
+                                key={index}
+                                className=" bg-[#5E7D4D80] text-[#7C8761] text-[12px] font-semibold
+                                             uppercase px-3 py-2 "
+                              >
+                                {feature}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+            </div>
+          </>
         )}
 
         {/* Button */}
         <div className="flex justify-center mt-16">
-          <button className="bg-[#6f8d5c] text-white uppercase px-12 py-4 hover:opacity-90 transition">
+          <button
+            className=" bg-[#5E7D4D] border border-[#5E7D4D] text-white text-[16px] font-bold
+                         font-['Chakra_Petch'] uppercase px-12 py-4 cursor-pointer transition-all
+                         duration-300 hover:bg-transparent hover:text-[#5E7D4D] hover:border-[#5E7D4D]
+                         hover:scale-105 "
+          >
             View All Products
           </button>
         </div>

@@ -63,7 +63,7 @@ const Service = () => {
 
               {/* Vertical Text */}
               <div
-                className=" absolute top-0 left-0 h-full flex items-start justify-center px-2"
+                className=" absolute top-0 left-0 h-full flex items-start justify-center"
               >
                 <span
                   className=" text-white text-[34px] xl:text-[45px] font-bold uppercase leading-none [writing-mode:vertical-lr]
