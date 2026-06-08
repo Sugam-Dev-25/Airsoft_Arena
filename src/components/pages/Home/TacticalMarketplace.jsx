@@ -153,12 +153,12 @@ const TacticalMarketplace = () => {
                       <div className="group">
                         <div className="relative overflow-hidden">
                           <Link to={`/product/${product.slug}`}>
-  <img
-    src={image}
-    alt={product.title.rendered}
-    className="w-full h-[420px] object-cover transition duration-500 group-hover:scale-105"
-  />
-</Link>
+                            <img
+                              src={image}
+                              alt={product.title.rendered}
+                              className="w-full h-[420px] object-cover transition duration-500 group-hover:scale-105"
+                            />
+                          </Link>
 
                           <div
                             className=" absolute top-4 left-0 w-[180px] bg-gradient-to-r from-[#7C8761]
