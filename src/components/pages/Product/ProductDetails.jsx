@@ -1,30 +1,43 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import API from "../../../Api/Api";
+import axios from "axios";
 
 const ProductDetails = () => {
   const { slug } = useParams();
-
+  const [wcProduct, setWcProduct] = useState(null);
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const res = await API.get(`/product?slug=${slug}&_embed`);
+useEffect(() => {
+  const fetchProduct = async () => {
+    try {
+      const [wpRes, wcRes] = await Promise.all([
+        API.get(`/product?slug=${slug}&_embed`),
+        axios.get(
+          "https://subhadeep.ahaanmedia.com/wp-json/wc/store/v1/products"
+        ),
+      ]);
 
-        if (res.data.length > 0) {
-          setProduct(res.data[0]);
-        }
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setLoading(false);
+      if (wpRes.data.length > 0) {
+        const wpProduct = wpRes.data[0];
+
+        const matchedWCProduct = wcRes.data.find(
+          (item) => item.id === wpProduct.id
+        );
+
+        setProduct(wpProduct);
+        setWcProduct(matchedWCProduct);
       }
-    };
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    fetchProduct();
-  }, [slug]);
+  fetchProduct();
+}, [slug]);
 
   if (loading) {
     return (
@@ -81,12 +94,12 @@ const ProductDetails = () => {
               {product.title.rendered}
             </h1>
 
-            <div className="mt-8 text-[#6f8d5c] text-[48px] font-bold">
-              $
-              {product.meta?._price ||
-                product.meta?.price ||
-                "145"}
-            </div>
+<div className="mt-8 text-[#6f8d5c] text-[48px] font-bold">
+  {wcProduct?.prices?.currency_symbol || "₹"}
+  {wcProduct?.prices?.price
+    ? (Number(wcProduct.prices.price) / 100).toFixed(0)
+    : 0}
+</div>
 
             {/* Features */}
             <div className="flex flex-wrap gap-3 mt-8">
